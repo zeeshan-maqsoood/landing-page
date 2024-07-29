@@ -1,38 +1,224 @@
-.App {
-  text-align: center;
+/* Base styles */
+body {
+  font-family: "Roboto", "sans-serif";
+  margin: 0;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 100vw;
+  background-color: #c9c9a2
+
+  ;
+  overflow: hidden;
+  flex-wrap: wrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navContainer {
+  height: 116px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  position: relative;
+  z-index: 1000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 61.87px;
+  margin-block: 27.07px;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin-inline: 24px;
+}
+
+.menu {
+  margin-right: 20px;
+}
+
+.logout {
+  background-color: transparent;
+  padding: 6px 34px;
+  color: orange;
+}
+
+/* Mobile menu styles */
+.icondiv {
+  display: flex;
+  height: 100px;
+  width: 100px;
+  cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+.menuMobile {
+  position: absolute;
+  right: 0;
+  top: 100%; /* Adjusted to ensure menu doesn't overlap */
+  background-color: #bdc145;
+  height: 400px;
+  width: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+
+.menuMobileLinks {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuMobileItem {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.menuMobileItem:hover {
+  color: #fff; /* Change text color on hover */
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+  .btn {
+    visibility: hidden;
+  }
+  .links {
+    display: none; /* Hide links on small screens */
+  }
+  .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 104px;
+    width: 80px;
+  }
+  .mobileContainer {
+    position: relative;
+    height: 100%;
+    width: 100px;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .icondiv {
+    display: none;
+  }
+}
+.main {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 600px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border: 2px solid red;
+}
+
+.left {
+  background-color: orange;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.iconContainer {
+  display: none;
+}
+
+.right {
+  background-color: pink;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.leftcontent {
+  background-color: blueviolet;
+  padding: 40px 20px;
+}
+
+.rightcontent {
+  background-color: blueviolet;
+  padding: 40px 20px;
+}
+
+/* SideBySideLayout.css */
+.layout-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+.left-side {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-side {
+  flex: 1;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-side img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  background-position: center;
+}
+
+/* Responsive adjustments for SideBySideLayout */
+@media only screen and (max-width: 600px) {
+  .layout-container {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    height: auto;
+  }
+
+  .right-side img {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+}
+
+.button {
+  padding: 20px 28px;
+  background-color: #bdc145;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
